@@ -15,15 +15,17 @@ namespace Ecommerce.Models
         [Required(ErrorMessage = " NO puede ser vacio el campo {0}")]
         [MaxLength(50, ErrorMessage = "El campo {0} de tener maximo {1} caracteres")]
         [Display(Name = "Ciudad")]
-        
         public string Name { get; set; }
 
         [Required(ErrorMessage = " NO puede ser vacio el campo {0}")]
         [Range(1, Double.MaxValue, ErrorMessage = "Debes seleccionar un {0}")]
-        [Display(Name = "Departamento")]
+       
         public int DepartmentId { get; set; }
 
         public virtual Department Department { get; set; }
+
+        public virtual ICollection<Company> Companies { get; set; }
+
 
     }
 }
